@@ -1,6 +1,9 @@
-import Interpreter.MemoryExpression;
-import Interpreter.TerminalExpression;
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import Interpreter.Component.Component;
+import Interpreter.Expression.FileExpression;
 
 /**
  * Client
@@ -8,10 +11,11 @@ import Interpreter.Component.Component;
 public class Client {
   public static void main(String[] args) {
     try {
-      Component result = (new TerminalExpression()).interpret(args[0]);
-      result.print(0);
+      Path path = Paths.get("example.txt");
+      Component component = (new FileExpression()).interpretFile(path);
+      component.print(0);
     } catch (Exception e) {
-      System.out.print("Syntax error");
+      e.printStackTrace();
     }
   }
 }

@@ -1,4 +1,4 @@
-package Interpreter;
+package Interpreter.Expression;
 
 import Interpreter.Component.Component;
 import Interpreter.Exception.SyntaxException;

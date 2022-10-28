@@ -1,7 +1,4 @@
-package Interpreter;
-
-import java.util.List;
-import java.util.Stack;
+package Interpreter.Expression;
 
 import Interpreter.Component.Component;
 import Interpreter.Component.Computer;
@@ -49,7 +46,7 @@ public abstract class AbstractExpression {
 
   public Computer interpretComputer(String s, Integer start, Integer end)
       throws SyntaxException, NumberFormatException {
-    String[] splited = s.substring(start + 1, end).trim().split(" +");
+    String[] splited = s.substring(start + 1, end).trim().split("[^0-9]+");
     if (splited.length != 2) {
       throw new SyntaxException();
     }
