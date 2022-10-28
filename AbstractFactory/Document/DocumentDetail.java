@@ -1,4 +1,4 @@
-import Heading.Heading;
+package Document;
 
 public class DocumentDetail {
   private String heading;
